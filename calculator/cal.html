@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>calculator</title>
+
+<head>
+    <link rel="stylesheet" href="cal.css">
+    <script>
+        function Solution(val) {
+            var v = document.getElementById('cal');
+            v.value += val;
+        }
+        function Show() {
+            var num1 = document.getElementById('cal').value;
+            var num2 = eval(num1);
+            document.getElementById('cal').value = num2;
+        }
+        function Remove() {
+            var inp = document.getElementById('cal');
+            inp.value = '';
+        }
+        function Back() {
+            var ev = document.getElementById('cal');
+            ev.value = ev.value.slice(0, -1);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <input type="text" id='cal'>
+        <div class="btn">
+            <input type="button" value=" " disabled>
+            <input type="button" value='C' onclick="Remove()">
+            <input type="button" value='←' onclick="Back('←')">
+            <input type="button" value='/' onclick="Solution('/')">
+            <br>
+            <input type="button" value='7' onclick="Solution('7')">
+            <input type="button" value='8' onclick="Solution('8')">
+            <input type="button" value='9' onclick="Solution('9')">
+            <input type="button" value='x' onclick="Solution('*')">
+            <br>
+            <input type="button" value='4' onclick="Solution('4')">
+            <input type="button" value='5' onclick="Solution('5')">
+            <input type="button" value='6' onclick="Solution('6')">
+            <input type="button" value='-' onclick="Solution('-')">
+            <br>
+            <input type="button" value='1' onclick="Solution('1')">
+            <input type="button" value='2' onclick="Solution('2')">
+            <input type="button" value='3' onclick="Solution('3')">
+            <input type="button" value='+' onclick="Solution('+')">
+            <br>
+            <input type="button" value=" " disabled>
+            <input type="button" value='0' onclick="Solution('0')">
+            <input type="button" value='.' onclick="Solution('.')">
+            <input type="button" value='=' onclick="Show()">
+        </div>
+    </div>
+</body>
+
+</html>
